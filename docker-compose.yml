@@ -1,0 +1,33 @@
+version: '2'
+services:
+    php-microservice-symfony:
+        image: mkadiri/php-microservice-symfony:latest
+        container_name: php-microservice-symfony
+        environment:
+            - JWT_SECRET=MoWasHere
+            - JWT_ALGORITHM=HS256
+            - MYSQL_HOST=mysql
+            - MYSQL_PORT=3306
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root
+            - MYSQL_DATABASE=php_microservice_symfony
+            - MYSQL_FULL_ADDRESS=mysql://root:root@mysql:3306/php_microservice_symfony
+            - MODE=DEV
+            - XDEBUG_ADDRESS=172.17.0.1
+            - XDEBUG_PORT=9000
+        ports:
+            - 80:80
+        volumes:
+            - ./app:/var/www/html
+            - /var/www/html/var
+            - /var/www/html/vendor
+        restart: always
+    mysql:
+        image: mysql
+        container_name: mysql
+        ports:
+            - 3307:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
