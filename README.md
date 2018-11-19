@@ -8,8 +8,9 @@ To get the application up and running, do the following from the root of the `ph
 ## Usage
 To see the service in action you'll need to make a call to the apis, you can do so with an application such as `POSTMAN`
 
-- Below are the 3 API routes you have available along with data you'll need to submit
+- Below are the 3 API routes you have available along with data you may need to submit
 ``` 
+    # Add ad
     Method - POST 
     URL - http://localhost/ad
     body -
@@ -21,6 +22,7 @@ To see the service in action you'll need to make a call to the apis, you can do 
     }
     
     
+    # Edit ad
     Method - PUT
     URL - http://localhost/ad/{id} (e.g. http://localhost/ad/1 can be used after POST has been fired)
     body -
@@ -33,6 +35,7 @@ To see the service in action you'll need to make a call to the apis, you can do 
     }
     
     
+    # List ads
     Method - GET
     URL - http://localhost/ad/list  
  ```
