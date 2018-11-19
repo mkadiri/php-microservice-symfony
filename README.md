@@ -2,10 +2,8 @@
 
 To get the application up and running, do the following from the root of the `php-microservice-symfony` directory:
 - run `bash build.sh` from the root folder, this will create the docker images you need
-- run `docker rm -f $(docker ps -qa)  && docker-compose up -d && docker logs -f php-microservice-symfony`
-    - `docker rm -f $(docker ps -qa)` will remove all running containers on you machine (if you experience port issues)
-    - `docker-compose up -d` will run all the docker containers without log output
-    - `docker logs -f php-microservice-symfony` will print out the container logs
+- run `docker-compose up -d && docker logs -f php-microservice-symfony`
+    - If you're experiencing port issues remove any containers you have running and try again`docker rm -f $(docker ps -qa)`
     
 ## Usage
 To see the service in action you'll need to make a call to the apis, you can do so with an application such as `POSTMAN`
