@@ -1,4 +1,4 @@
-##Installation
+## Installation
 
 To get the application up and running, do the following from the root of the `php-microservice-symfony` directory:
 - run `bash build.sh` from the root folder, this will create the docker images you need
