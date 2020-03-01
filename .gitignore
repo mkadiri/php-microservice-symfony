@@ -1,2 +1,3 @@
-supervisord.*
+supervisord.log
+app/supervisord.log
 .idea

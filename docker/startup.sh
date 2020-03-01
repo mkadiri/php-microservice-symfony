@@ -20,6 +20,14 @@ mysql -h $MYSQL_HOST -P $MYSQL_PORT -u $MYSQL_USER --password=$MYSQL_PASSWORD -e
     VALUES(1, 'test@octopuslabs.com​', 'testuser', 'TkpJe8qr9hjbqPwCHi0n')
     ON DUPLICATE KEY UPDATE id=id;"
 
+echo "Add same ads"
+mysql -h $MYSQL_HOST -P $MYSQL_PORT -u $MYSQL_USER --password=$MYSQL_PASSWORD -e \
+    "USE $MYSQL_DATABASE;
+    INSERT INTO ad (id, user_id, title, description, price, creation_date)
+    VALUES
+    (1, 1, 'hello', 'world', 100, '2020-10-10 10:10:10'),
+    (2, 1, 'bye', 'world', 200, '2020-10-10 10:10:10');"
+
 if [[ "$MODE" == "DEV" ]]; then
     echo "enable xdebugger"
     echo 'zend_extension = xdebug.so' > /etc/php7/php.ini
